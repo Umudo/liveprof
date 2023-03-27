@@ -31,10 +31,10 @@ class Logger implements LoggerInterface
 
     /**
      * @param mixed $level
-     * @param string $message
+     * @param \Stringable|string $message
      * @param array $context
      */
-    public function log($level, Stringable|string $message, array $context = array()): void
+    public function log($level, \Stringable|string $message, array $context = array()): void
     {
         $log_string = $this->getLogMsg($level, $message, $context);
         file_put_contents($this->logfile, $log_string, FILE_APPEND);
